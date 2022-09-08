@@ -1,11 +1,16 @@
+from email.policy import default
 import os
 from dotenv import load_dotenv
+from environs import Env
+
 
 load_dotenv()
 
+env = Env()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': os.getenv('DB_ENGINE'),
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
         'NAME': os.getenv('DB_NAME'),
@@ -16,13 +21,13 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
-DEBUG = os.getenv('DEBUG')
+DEBUG = (os.getenv('DJANGO_DEBUG', 'False') == 'True')
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['localhost'])
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

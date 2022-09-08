@@ -27,12 +27,15 @@ pip install -r requirements.txt
 и отключите отладку.
 
 ```
-DB_HOST=bd.bdhost.xyz   # адрес кластера баз данных
-DB_PORT=5432            # порт подключения
-DB_NAME=security        # имя базы данных
-DB_USER=user            # пользователь
-DB_PASSWD=Pa$$wd        # пароль
-DEBUG=False             # отключение отладки
+DB_ENGINE=django.db.backends.postgresql_psycopg2    # бэкенд базы данных
+DB_HOST=bd.bdhost.xyz                               # адрес кластера баз данных
+DB_PORT=5432                                        # порт подключения
+DB_NAME=security                                    # имя базы данных
+DB_USER=user                                        # пользователь
+DB_PASSWD=Pa$$wd                                    # пароль
+DJANGO_DEBUG=False                                  # отключение отладки
+DJANGO_SECRET_KEY=replaceme                         # ОБЯЗАТЕЛЬНО УСТАНОВИТЕ СВОЕ КЛЮЧ
+ALLOWED_HOSTS=localhost                             # перечень доменных имен вашего сайта
 ```
 
 ## Запуск
