@@ -34,8 +34,8 @@ DB_NAME=security                                    # имя базы данны
 DB_USER=user                                        # пользователь
 DB_PASSWD=Pa$$wd                                    # пароль
 DJANGO_DEBUG=False                                  # отключение отладки
-DJANGO_SECRET_KEY=replaceme                         # ОБЯЗАТЕЛЬНО УСТАНОВИТЕ СВОЕ КЛЮЧ
-ALLOWED_HOSTS=localhost                             # перечень доменных имен вашего сайта
+DJANGO_SECRET_KEY=replaceme                         # ОБЯЗАТЕЛЬНО УСТАНОВИТЕ СВОЙ КЛЮЧ
+DJANGO_ALLOWED_HOSTS=localhost                             # перечень доменных имен вашего сайта
 ```
 
 ## Запуск
